@@ -1,0 +1,23 @@
+<mat-checkbox #showDet [checked]="isChecked" (change) = "onChange($event)">check1</mat-checkbox>
+
+<div *ngIf="showDet.checked">details</div>
+
+<form>
+<mat-form-field >
+        <mat-select placeholder="Colors test" [(ngModel)]="mycolor" name="colortest" (change)="onColorsChange($event)">
+          <mat-option *ngFor="let color of colors" [value]="color.id">
+              {{ color.name }}
+            </mat-option>
+        </mat-select>
+</mat-form-field>
+<p> Selected value: {{mycolor}} </p>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Favorite food" type="date" [value]="10/10/2017"/>
+        </mat-form-field>
+      
+      
+      <app-my-table-component> </app-my-table-component> 
+</form>
+      
+
